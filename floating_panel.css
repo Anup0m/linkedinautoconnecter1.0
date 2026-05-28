@@ -1,0 +1,361 @@
+/* LinkedIn Auto-Connect Injected Floating Panel Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+/* Main Container */
+.lac-panel {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  width: 320px !important;
+  background: rgba(15, 23, 42, 0.85) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(139, 92, 246, 0.1) !important;
+  z-index: 999999 !important;
+  padding: 16px !important;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  color: #f8fafc !important;
+  box-sizing: border-box !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.lac-panel * {
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: inherit !important;
+}
+
+/* Header */
+.lac-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding-bottom: 10px !important;
+}
+
+.lac-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.lac-logo-glow {
+  width: 8px !important;
+  height: 8px !important;
+  background: #06b6d4 !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 10px #06b6d4, 0 0 20px #06b6d4 !important;
+}
+
+.lac-title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  background: linear-gradient(135deg, #06b6d4, #8b5cf6) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Close/Min Button */
+.lac-btn-close {
+  background: none !important;
+  border: none !important;
+  color: #94a3b8 !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  transition: color 0.2s !important;
+  padding: 4px !important;
+  border-radius: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.lac-btn-close:hover {
+  color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+}
+
+/* Status Section */
+.lac-status-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 13px !important;
+}
+
+.lac-status-label {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: #94a3b8 !important;
+}
+
+/* Pulsing Status Light */
+.lac-indicator {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background-color: #64748b !important;
+  transition: background-color 0.3s, box-shadow 0.3s !important;
+}
+
+/* Glowing Animations */
+.lac-status-idle {
+  background-color: #10b981 !important;
+  box-shadow: 0 0 8px #10b981 !important;
+}
+
+.lac-status-connecting {
+  background-color: #8b5cf6 !important;
+  box-shadow: 0 0 8px #8b5cf6 !important;
+  animation: lac-pulse 1.5s infinite !important;
+}
+
+.lac-status-paused {
+  background-color: #f59e0b !important;
+  box-shadow: 0 0 8px #f59e0b !important;
+}
+
+.lac-status-stopped {
+  background-color: #ef4444 !important;
+  box-shadow: 0 0 8px #ef4444 !important;
+}
+
+@keyframes lac-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px rgba(139, 92, 246, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0);
+  }
+}
+
+.lac-status-text {
+  font-weight: 500 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Progress bar */
+.lac-progress-outer {
+  width: 100% !important;
+  height: 6px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 3px !important;
+  overflow: hidden !important;
+}
+
+.lac-progress-inner {
+  height: 100% !important;
+  width: 0% !important;
+  background: linear-gradient(90deg, #06b6d4, #8b5cf6) !important;
+  border-radius: 3px !important;
+  transition: width 0.4s ease !important;
+  box-shadow: 0 0 8px rgba(6, 182, 212, 0.5) !important;
+}
+
+/* Stats Row */
+.lac-stats-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 8px !important;
+}
+
+.lac-stat-card {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+  text-align: center !important;
+}
+
+.lac-stat-val {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #f1f5f9 !important;
+}
+
+.lac-stat-lbl {
+  font-size: 10px !important;
+  color: #64748b !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-top: 2px !important;
+}
+
+/* Quick Settings Panel */
+.lac-quick-settings {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+}
+
+.lac-setting-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 11px !important;
+}
+
+.lac-setting-lbl {
+  color: #94a3b8 !important;
+}
+
+.lac-setting-val {
+  color: #f1f5f9 !important;
+  font-weight: 500 !important;
+}
+
+.lac-setting-input {
+  width: 50px !important;
+  background: rgba(15, 23, 42, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px !important;
+  color: #fff !important;
+  text-align: center !important;
+  padding: 2px !important;
+  font-size: 11px !important;
+}
+
+.lac-setting-input:focus {
+  outline: none !important;
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 0 5px rgba(139, 92, 246, 0.5) !important;
+}
+
+/* Action Controls */
+.lac-actions {
+  display: flex !important;
+  gap: 8px !important;
+  margin-top: 4px !important;
+}
+
+.lac-btn {
+  flex: 1 !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+.lac-btn-start {
+  background: linear-gradient(135deg, #06b6d4, #0891b2) !important;
+  color: #ffffff !important;
+}
+
+.lac-btn-start:hover {
+  background: linear-gradient(135deg, #0891b2, #0e7490) !important;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.4) !important;
+}
+
+.lac-btn-pause {
+  background: rgba(245, 158, 11, 0.15) !important;
+  color: #f59e0b !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+}
+
+.lac-btn-pause:hover {
+  background: rgba(245, 158, 11, 0.25) !important;
+}
+
+.lac-btn-stop {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
+
+.lac-btn-stop:hover {
+  background: rgba(239, 68, 68, 0.25) !important;
+}
+
+/* Logging Info area */
+.lac-log {
+  background: rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-radius: 8px !important;
+  height: 60px !important;
+  overflow-y: auto !important;
+  padding: 6px !important;
+  font-size: 11px !important;
+  color: #94a3b8 !important;
+  list-style: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  scrollbar-width: thin !important;
+}
+
+.lac-log::-webkit-scrollbar {
+  width: 4px !important;
+}
+
+.lac-log::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 2px !important;
+}
+
+.lac-log-item {
+  line-height: 1.3 !important;
+  word-break: break-all !important;
+}
+
+.lac-log-success {
+  color: #10b981 !important;
+}
+
+.lac-log-warn {
+  color: #f59e0b !important;
+}
+
+.lac-log-err {
+  color: #ef4444 !important;
+}
+
+/* Cool-down Bar */
+.lac-cooldown-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(245, 158, 11, 0.1) !important;
+  border: 1px solid rgba(245, 158, 11, 0.25) !important;
+  border-radius: 8px !important;
+  padding: 8px !important;
+  animation: lac-pulse-slow 2s infinite !important;
+}
+
+.lac-cooldown-text {
+  font-size: 11px !important;
+  color: #f59e0b !important;
+  font-weight: 500 !important;
+}
+
+@keyframes lac-pulse-slow {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
