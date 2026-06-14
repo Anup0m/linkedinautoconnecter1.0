@@ -6,8 +6,12 @@
 
 A smart, automated, and safe networking companion designed to accelerate your LinkedIn connection-request workflow. Built as a client-side Chrome Extension, it allows professionals and students to targetedly grow their network with college alumni, peers, and industry leaders without repetitive manual effort.
 
+> [!NOTE]
+> **Hobby Project:** This tool was created purely for fun to make my own day-to-day networking tasks easier. It is entirely non-commercial.
+
 > [!IMPORTANT]
 > **Privacy First:** This extension runs **100% client-side**. It does not scrape, store, or transmit your LinkedIn credentials, cookies, or profile data to any external server. All configuration data and session logs are saved locally in your browser's storage.
+
 
 ---
 
